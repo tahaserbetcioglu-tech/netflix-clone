@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>FilmCity — Filmler & Diziler & Animeler</title>
+<link rel="icon" href="public/logo.png">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="public/logo.png" alt="FilmCity Logo" class="logo">
+
+      <span class="brand-name">FilmCity</span>
+    </div>
+
+    <div class="controls">
+      <div class="tabs">
+        <button class="tab active" data-tab="movie">Filmler</button>
+        <button class="tab" data-tab="tv">Diziler</button>
+        <button class="tab" data-tab="anime">Animeler</button>
+      </div>
+
+      <div class="search">
+        <input id="searchInput" placeholder="Film, dizi veya anime ara..." />
+      </div>
+
+      <div class="right-controls">
+        <button id="themeBtn">🎨</button>
+        <div id="profile">
+          <img id="profileAvatar" src="./public/logo.png" alt="Logo" />
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="rows" class="rows"></section>
+
+    <section id="infiniteList" class="infinite-list">
+      <div id="grid" class="grid"></div>
+      <div id="loading" class="loading">Yükleniyor...</div>
+    </section>
+  </main>
+
+  <!-- Sol Panel -->
+  <aside id="detailPanel" class="detail-panel">
+    <button id="closePanel" class="close">✕</button>
+    <img id="detailPoster" alt="poster" />
+    <div class="info">
+      <h2 id="detailTitle"></h2>
+      <p id="detailYear" class="muted"></p>
+      <p id="detailGenres" class="muted"></p>
+      <p id="detailRating" class="muted"></p>
+      <p id="detailOverview"></p>
+
+      <iframe id="trailerFrame" frameborder="0" allowfullscreen></iframe>
+
+      <div class="panel-actions">
+        <a id="watchBtn" target="_blank" class="primary">İZLE</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Film izleme modal -->
+  <div id="watchModal" class="watch-modal">
+    <div class="watch-inner">
+      <button id="closeWatch" class="close-watch">✕</button>
+      <iframe id="watchFrame" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
